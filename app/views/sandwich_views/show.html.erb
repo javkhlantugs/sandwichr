@@ -1,0 +1,25 @@
+<div data-sandwich-id="<%= @thesandwich.id %>"><%= @thesandwich.name %></div>
+
+<ul>
+<li>Bread: <%= @thesandwich.bread_type %></li>
+<li>Total Calories: <%= @thesandwich.total_calories %></li>
+<li>Ingredients: 
+		<ul class='js-ingredient-list'>
+			<% @thesandwich.ingredients.each do |an_ingredient| %>
+			<li><%= an_ingredient.name %></li>
+			<% end %>
+			</ul>
+			</li>
+
+</ul>
+
+<h4>Add Ingredients </h4>
+<ul>
+<% @theIngredients.each do |an_ingredient| %>
+<li><button class="js-ingredient" data-sandwich-id="<%= @thesandwich.id %>" data-ingredient-id="<%= an_ingredient.id %>">
+	<%= an_ingredient.name %></button></li>
+	<% end %>
+</ul>	
+
+
+
